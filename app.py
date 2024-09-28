@@ -8,8 +8,8 @@ import streamlit as st
 
 
 # Initialize Ollama
-ollama_embedding = OllamaEmbedding(model_name="nomic-embed-text")
-ollama_llm = Ollama(model="llama3.2")
+ollama_embedding = OllamaEmbedding(model_name="nomic-embed-text", base_url="http://ollama:11434")
+ollama_llm = Ollama(model="llama3.2:1b", base_url="http://ollama:11434")
 
 
 def extract_text_from_pdf(pdf_file):
@@ -24,8 +24,6 @@ def save_uploaded_file(uploaded_file):
         f.write(uploaded_file.getbuffer())
     return os.path.join("uploads", uploaded_file.name)
 
-
-# ... (previous imports and function definitions)
 
 def main():
     st.title("PDF Chatbot")
