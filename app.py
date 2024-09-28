@@ -1,10 +1,11 @@
-import streamlit as st
-import ollama
-import PyPDF2
 import os
+
+import PyPDF2
 from llama_index.core import VectorStoreIndex, Document
 from llama_index.embeddings.ollama import OllamaEmbedding
 from llama_index.llms.ollama import Ollama
+import streamlit as st
+
 
 # Initialize Ollama
 ollama_embedding = OllamaEmbedding(model_name="nomic-embed-text")
